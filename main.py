@@ -1,6 +1,7 @@
 import pygame
 from constants import *
 from logger import log_state
+from player import Player
 
 def main():
     pygame.init()
@@ -12,6 +13,7 @@ def main():
 
     clock = pygame.time.Clock()
     dt = 0.0
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # Game Loop
     while True:
@@ -20,7 +22,10 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        # What to update
         screen.fill("black")
+        player.draw(screen)
+
         # Refresh Screen
         pygame.display.flip()
         dt = clock.tick(60) / 1000
