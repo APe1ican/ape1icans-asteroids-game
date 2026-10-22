@@ -22,7 +22,9 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        # What to update
+        player.update(dt)
+
+        # What to update on display
         screen.fill("black")
         player.draw(screen)
 
