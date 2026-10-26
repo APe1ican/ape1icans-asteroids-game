@@ -48,7 +48,7 @@ def main():
                 if asteroid.collides_with(shot):
                     log_event("asteroid_shot")
                     shot.kill()
-                    asteroid.kill()
+                    asteroid.split()
                     break       # I call break here because we don't need the other shots for the same hit asteroid
 
         # What to update on display
